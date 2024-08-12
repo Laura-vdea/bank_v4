@@ -7,6 +7,7 @@ Widget::Widget(QWidget *parent)
     : QWidget(parent), ui(new Ui::Widget), bankingSystem(new BankingSystem)
 {
     ui->setupUi(this);
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
 Widget::~Widget() {

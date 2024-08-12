@@ -18,6 +18,7 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+    void cancel();
 
 private slots:
 
@@ -38,6 +39,9 @@ private slots:
     void on_pushButton_allAcc_clicked();
 
     void on_button_show_clicked();
+
+
+    void on_pushButton_exit_clicked();
 
 private:
     Ui::Widget *ui;

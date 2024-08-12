@@ -8,6 +8,10 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
+    connect(ui->button_dcancel, &QPushButton::clicked, this, &Widget::cancel);
+    connect(ui->button_wcancel, &QPushButton::clicked, this, &Widget::cancel);
+    connect(ui->button_mcancel, &QPushButton::clicked, this, &Widget::cancel);
+    connect(ui->button_scancel, &QPushButton::clicked, this, &Widget::cancel);
 }
 
 Widget::~Widget() {
@@ -76,5 +80,14 @@ void Widget::on_button_show_clicked()
     QString name = ui->lineEdit_namelogin->text();
 
     bankingSystem->showBalance(name.toStdString());
+}
+void Widget::cancel(){
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+
+void Widget::on_pushButton_exit_clicked()
+{
+    this->close();
 }
 

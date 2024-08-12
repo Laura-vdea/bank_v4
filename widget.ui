@@ -16,7 +16,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>10</y>
      <width>151</width>
      <height>61</height>
@@ -77,6 +77,15 @@ background-color: rgb(147, 170, 157);</string>
        <height>121</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(104, 141, 122);</string>
+     </property>
      <property name="text">
       <string>Make a Account</string>
      </property>
@@ -89,6 +98,14 @@ background-color: rgb(147, 170, 157);</string>
        <width>101</width>
        <height>121</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(104, 141, 122);</string>
      </property>
      <property name="text">
       <string>Deposit</string>
@@ -103,6 +120,14 @@ background-color: rgb(147, 170, 157);</string>
        <height>121</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(104, 141, 122);</string>
+     </property>
      <property name="text">
       <string>Withdraw</string>
      </property>
@@ -115,6 +140,14 @@ background-color: rgb(147, 170, 157);</string>
        <width>101</width>
        <height>121</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(104, 141, 122);</string>
      </property>
      <property name="text">
       <string>all Accounts</string>
@@ -129,6 +162,14 @@ background-color: rgb(147, 170, 157);</string>
        <height>121</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(104, 141, 122);</string>
+     </property>
      <property name="text">
       <string>Exit</string>
      </property>
@@ -141,6 +182,14 @@ background-color: rgb(147, 170, 157);</string>
        <width>101</width>
        <height>121</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(104, 141, 122);</string>
      </property>
      <property name="text">
       <string>specific Account</string>
@@ -157,6 +206,9 @@ background-color: rgb(147, 170, 157);</string>
        <height>31</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
     </widget>
     <widget class="QPushButton" name="button_dconfirm">
      <property name="geometry">
@@ -167,6 +219,15 @@ background-color: rgb(147, 170, 157);</string>
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(218, 218, 218);</string>
+     </property>
      <property name="text">
       <string>deposit</string>
      </property>
@@ -174,7 +235,7 @@ background-color: rgb(147, 170, 157);</string>
     <widget class="QPushButton" name="stackbutton_3">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>260</x>
        <y>220</y>
        <width>75</width>
        <height>31</height>
@@ -206,11 +267,14 @@ background-color: rgb(147, 170, 157);</string>
     <widget class="QPushButton" name="button_dcancel">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>260</x>
        <y>260</y>
        <width>75</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Cancel</string>
@@ -282,15 +346,27 @@ background-color: rgb(147, 170, 157);</string>
        <height>31</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
     </widget>
     <widget class="QPushButton" name="button_wconfirm">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>220</y>
-       <width>131</width>
+       <width>141</width>
        <height>71</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(218, 218, 218);</string>
      </property>
      <property name="text">
       <string>withdraw</string>
@@ -318,6 +394,9 @@ background-color: rgb(147, 170, 157);</string>
        <height>31</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="text">
       <string>Cancel</string>
      </property>
@@ -327,14 +406,30 @@ background-color: rgb(147, 170, 157);</string>
     <widget class="QPushButton" name="button_show">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>250</y>
+       <x>260</x>
+       <y>220</y>
        <width>75</width>
-       <height>24</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
       <string>show</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_scancel">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>260</y>
+       <width>75</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Cancel</string>
      </property>
     </widget>
    </widget>
@@ -374,27 +469,39 @@ background-color: rgb(147, 170, 157);</string>
        <height>31</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
     </widget>
     <widget class="QPushButton" name="button_mconfirm">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>260</y>
-       <width>91</width>
-       <height>31</height>
+       <y>250</y>
+       <width>111</width>
+       <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(218, 218, 218);</string>
+     </property>
      <property name="text">
-      <string>create</string>
+      <string>Create</string>
      </property>
     </widget>
     <widget class="QPushButton" name="stackbutton_2">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>260</y>
-       <width>81</width>
-       <height>31</height>
+       <x>270</x>
+       <y>250</y>
+       <width>61</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -405,7 +512,7 @@ background-color: rgb(147, 170, 157);</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>10</y>
+       <y>0</y>
        <width>201</width>
        <height>61</height>
       </rect>
@@ -420,14 +527,17 @@ background-color: rgb(147, 170, 157);</string>
       <string>Make a Account</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="butto_mcancel">
+    <widget class="QPushButton" name="button_mcancel">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>260</y>
-       <width>81</width>
-       <height>31</height>
+       <x>200</x>
+       <y>250</y>
+       <width>61</width>
+       <height>41</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Cancel</string>
@@ -533,11 +643,20 @@ background-color: rgb(147, 170, 157);</string>
   <widget class="QPushButton" name="loginButton">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>220</y>
-     <width>171</width>
-     <height>24</height>
+     <x>20</x>
+     <y>213</y>
+     <width>201</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-color: rgb(181, 181, 181);</string>
    </property>
    <property name="text">
     <string>Login</string>

@@ -42,9 +42,9 @@ void Widget::on_pushButton_allAcc_clicked()  // all accounts 버튼 클릭시
 
 void Widget::on_button_mconfirm_clicked()   // make a account confirm
 {
-    QString name = ui->lineEdit_namelogin->text();
-    QString accountNumber = ui->accountNumberLineEdit->text();
-    double initialBalance = ui->initialBalanceSpinBox->value();
+    QString name = ui->lineEdit_mn->text();
+    QString accountNumber = ui->lineEdit_ma->text();
+    double initialBalance = ui->spinBox_mb->value();
 
     bankingSystem->createAccount(name.toStdString(), accountNumber.toStdString(), initialBalance);
     QMessageBox::information(this, "Account Created", "Account created successfully.");

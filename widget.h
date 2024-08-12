@@ -5,6 +5,8 @@
 #include <memory>
 #include "bankingsystem.h"
 
+using namespace std;
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;

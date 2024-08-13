@@ -25,25 +25,17 @@ public:
 private slots:
 
     void on_loginButton_clicked();
-
     void on_pushButton_makeAcc_clicked();
-
     void on_pushButton_deposit_clicked();
-
     void on_pushButton_withdraw_clicked();
-
     void on_button_mconfirm_clicked();
-
     void on_button_dconfirm_clicked();
-
     void on_button_wconfirm_clicked();
-
     void on_pushButton_allAcc_clicked();
-
     void on_button_show_clicked();
-
-
     void on_pushButton_exit_clicked();
+    void on_pushButton_spAcc_clicked();
+
 
 private:
     Ui::Widget *ui;

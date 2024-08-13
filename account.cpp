@@ -30,6 +30,7 @@ void Account::showAllAccounts() const {
 bool Account::deposit(double money) {
     if (money <= 0) return false; // 입금 금액이 0 이하이면 실패
     balance += money; // 잔액에 입금 금액 추가
+    transactions.push_back({"Deposit", money});
     return true;
 }
 
@@ -37,6 +38,7 @@ bool Account::deposit(double money) {
 bool Account::withdraw(double money) {
     if (money > balance || money <= 0) return false; // 출금 금액이 잔액보다 많거나 0 이하이면 실패
     balance -= money; // 잔액에서 출금 금액 차감
+    transactions.push_back({"Withdraw", money});
     return true;
 }
 
@@ -102,4 +104,7 @@ void Account::load(QTextStream& inFile) { // 파일에서 계좌 정보를 읽�
             accountMap[accountNumber] = std::make_unique<Account>(accountNumber, name, balance);
         }
     }
+}
+vector<pair<QString, double>> Account::getTransactions() const {
+    return transactions;  // 거래 내역 반환
 }

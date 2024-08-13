@@ -16,6 +16,7 @@ protected:
     QString name; // 고객 이름
     int balance; // 잔액
     map<QString, unique_ptr<Account>> accountMap;  // 계좌 정보를 담는 맵
+    vector<pair<QString, double>> transactions; // 기록 저장용 예시
 public:
     Account(const QString& accNum, const QString& nm, int bal);
     virtual ~Account() {}
@@ -35,6 +36,8 @@ public:
     virtual void showAccInfo() const; // 계좌 정보를 출력하는 함수
     virtual void save(QTextStream& outFile) const; // 계좌 정보를 파일에 저장하는 함수
     virtual void load(QTextStream& inFile); // 파일에서 계좌 정보를 읽어오는 함수
+    vector<pair<QString, double>> getTransactions() const; // 거래 내역을 반환하는 함수
+
 };
 
 #endif // ACCOUNT_H

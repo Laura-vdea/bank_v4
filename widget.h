@@ -47,6 +47,7 @@ private slots:
 
     void on_pushButton_spAcc_clicked();
 
+
 private:
     Ui::Widget *ui;
     std::shared_ptr<BankingSystem> bankingSystem;

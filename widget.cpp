@@ -8,10 +8,10 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
 
-    connect(ui->button_dcancel, &QPushButton::clicked, this, &Widget::cancel);
-    connect(ui->button_wcancel, &QPushButton::clicked, this, &Widget::cancel);
-    connect(ui->button_mcancel, &QPushButton::clicked, this, &Widget::cancel);
-    connect(ui->button_scancel, &QPushButton::clicked, this, &Widget::cancel);
+    connect(ui->button_dcancel, &QPushButton::clicked, this, &Widget::cancel);  // deposit 취소
+    connect(ui->button_wcancel, &QPushButton::clicked, this, &Widget::cancel);  // withdraw 취소
+    connect(ui->button_mcancel, &QPushButton::clicked, this, &Widget::cancel);  // make a account 취소
+    connect(ui->button_scancel, &QPushButton::clicked, this, &Widget::cancel);  // specific account 취소
 }
 
 Widget::~Widget() {
@@ -73,8 +73,24 @@ void Widget::on_button_wconfirm_clicked()
 
 void Widget::on_button_show_clicked()
 {
-    QString accountNumber = ui->lineEdit_ma->text();  // 계좌번호 필드를 가져옴
-    bankingSystem->showBalance(accountNumber);
+    //QString accountNumber = ui->lineEdit_ma->text();  // 계좌번호 필드를 가져옴
+    //bankingSystem->showBalance(accountNumber);
+    QString accountNumber = ui->lineEdit_spec->text();
+    auto account = bankingSystem->getAccount(accountNumber);
+
+    if (account) {
+        QString transactionHistory;
+        auto transactions = account->getTransactions();
+
+        for (const auto &transaction : transactions) {
+            transactionHistory += transaction.first + ": " + QString::number(transaction.second) + "\n";
+        }
+        ui->textEdit_show->setPlainText(transactionHistory);
+
+        //QMessageBox::information(nullptr, "Transaction History", transactionHistory);
+    } else {
+        QMessageBox::warning(nullptr, "Account Not Found", "계좌를 찾을 수 없습니다.");
+    }
 }
 
 void Widget::cancel() {

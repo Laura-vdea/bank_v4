@@ -25,6 +25,7 @@ public:
     void showBalance(const QString& accountNumber);             // 잔액 조회
     void showAllAccounts();                                     // 전체 계좌 조회
     int getBalanceForAccount(const QString& accountNumber) const; // 잔액 조회
+    shared_ptr<Account> getAccount(const QString &accountNumber) const;
 
 private:
     map<QString, shared_ptr<Account>> accountMap;               // Use QString as the key
@@ -33,7 +34,7 @@ private:
     void loadData();
     bool updateAccountBalance(const QString &accountNumber, int amount, bool isDeposit);
 
-    shared_ptr<Account> getAccount(const QString &accountNumber) const;
+    //shared_ptr<Account> getAccount(const QString &accountNumber) const;
 
 };
 

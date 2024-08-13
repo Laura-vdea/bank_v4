@@ -1,6 +1,8 @@
 #include "widget.h"
 #include "./ui_widget.h"
 #include <QMessageBox>
+#include <QFile>
+#include <QTextStream>
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent), ui(new Ui::Widget), bankingSystem(new BankingSystem)
@@ -18,12 +20,41 @@ Widget::~Widget() {
     delete ui;
 }
 
-void Widget::on_loginButton_clicked()
+void Widget::on_loginButton_clicked()               //로그인
 {
     QString name = ui->lineEdit_namelogin->text();
     if (name == "test") {
         ui->stackedWidget->setCurrentIndex(1);
     }
+    else {
+        QMessageBox::warning(this, "Login Failed", "Invalid username.");
+    }
+    /*QString name = ui->lineEdit_namelogin->text();
+    QStringList validUsers;
+
+    // users.txt 파일 열기
+    QFile file("users.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::warning(this, "Error", "Unable to open users file.");
+        return;
+    }
+
+    // 파일을 한 줄씩 읽어서 validUsers에 추가
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString line = in.readLine().trimmed();
+        if (!line.isEmpty()) {
+            validUsers.append(line);
+        }
+    }
+    file.close();
+
+    // 입력된 이름이 validUsers에 있는지 확인
+    if (validUsers.contains(name)) {
+        ui->stackedWidget->setCurrentIndex(1);  // 로그인 성공
+    } else {
+        QMessageBox::warning(this, "Login Failed", "Invalid username.");
+    }*/
 }
 
 void Widget::on_pushButton_makeAcc_clicked() {

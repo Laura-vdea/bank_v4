@@ -41,6 +41,10 @@ void Widget::on_pushButton_withdraw_clicked() {
 void Widget::on_pushButton_allAcc_clicked() {
     bankingSystem->showAllAccounts();
 }
+void Widget::on_pushButton_spAcc_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
 
 void Widget::on_button_mconfirm_clicked()
 {
@@ -81,3 +85,5 @@ void Widget::on_pushButton_exit_clicked()
 {
     this->close();
 }
+
+

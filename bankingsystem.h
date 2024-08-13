@@ -34,8 +34,6 @@ private:
     void loadData();
     bool updateAccountBalance(const QString &accountNumber, int amount, bool isDeposit);
 
-    //shared_ptr<Account> getAccount(const QString &accountNumber) const;
-
 };
 
 extern BankingSystem bankingSystem;  // 전역으로 사용할 BankingSystem 객체 선언

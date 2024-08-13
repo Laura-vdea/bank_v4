@@ -57,26 +57,25 @@ void Widget::on_loginButton_clicked()               //로그인
     }*/
 }
 
-void Widget::on_pushButton_makeAcc_clicked() {
+//6가지 menu버튼 클릭 시 화면 이동
+void Widget::on_pushButton_makeAcc_clicked() {    // make a account 계좌 생성으로 이동
     ui->stackedWidget->setCurrentIndex(5);
 }
-
-void Widget::on_pushButton_deposit_clicked() {
+void Widget::on_pushButton_deposit_clicked() {    // deposit 입금으로 이동
     ui->stackedWidget->setCurrentIndex(2);
 }
-
-void Widget::on_pushButton_withdraw_clicked() {
+void Widget::on_pushButton_withdraw_clicked() {   // withdraw 출금으로 이동
     ui->stackedWidget->setCurrentIndex(3);
 }
-
-void Widget::on_pushButton_allAcc_clicked() {
+void Widget::on_pushButton_allAcc_clicked() {     // all accounts 모든 계좌 출력으로 이동
     bankingSystem->showAllAccounts();
 }
-void Widget::on_pushButton_spAcc_clicked()
+void Widget::on_pushButton_spAcc_clicked()        // transaction history 거래 내역으로 이동
 {
     ui->stackedWidget->setCurrentIndex(4);
 }
 
+// 계좌 생성 확인 버튼 클릭
 void Widget::on_button_mconfirm_clicked()
 {
     QString name = ui->lineEdit_mn->text();
@@ -85,7 +84,7 @@ void Widget::on_button_mconfirm_clicked()
 
     bankingSystem->createAccount(name.toStdString(), accountNumber.toStdString(), initialBalance);
 }
-
+// 입금 확인 버튼 클릭
 void Widget::on_button_dconfirm_clicked()
 {
     QString accountNumber = ui->accountDepositEdit->text();  // 계좌 번호 입력란
@@ -93,7 +92,7 @@ void Widget::on_button_dconfirm_clicked()
 
     bankingSystem->deposit(accountNumber, amount);
 }
-
+// 출금 확인 버튼 클릭
 void Widget::on_button_wconfirm_clicked()
 {
     QString accountNumber = ui->accountWithdrawEdit->text();  // 계좌 번호 입력란
@@ -101,7 +100,7 @@ void Widget::on_button_wconfirm_clicked()
 
     bankingSystem->withdraw(accountNumber, amount);
 }
-
+// 세부 내역 보기 버튼 클릭
 void Widget::on_button_show_clicked()
 {
     //QString accountNumber = ui->lineEdit_ma->text();  // 계좌번호 필드를 가져옴
@@ -124,13 +123,13 @@ void Widget::on_button_show_clicked()
     }
 }
 
+// 취소 버튼 클릭 시 menu로 이동
 void Widget::cancel() {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+//exit 버튼 클릭 시 종료
 void Widget::on_pushButton_exit_clicked()
 {
     this->close();
 }
-
-

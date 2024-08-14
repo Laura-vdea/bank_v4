@@ -101,18 +101,18 @@ Account 클래스는 은행 계좌를 나타냅니다. 돈을 입금하고 출�
 > 주석 참조  
   
 #### [ 프로젝트 단계별 과정 설명 ]  
-1. 회원가입
+**1. 회원가입**
 - sign up button click &rarr; 생성할 이름 입력
-2. 로그인 & 로그아웃
+**2. 로그인 & 로그아웃**
 - 이름 입력 &rarr; login button click
 - log out button click 
 ![image](https://github.com/user-attachments/assets/4a34293a-3c5a-4520-85e5-5aed2e98c47f)
 
 
-3. import account data 
+**3. import account data** 
 -  import account data button click &rarr; .txt로 저장된 정보 가져옴
 
-4. 계좌 생성
+**4. 계좌 생성**
 - make a account button click
 - 생성할 계좌 번호 입력
 - 계좌 사용자 이름 입력
@@ -122,7 +122,7 @@ Account 클래스는 은행 계좌를 나타냅니다. 돈을 입금하고 출�
 ![image](https://github.com/user-attachments/assets/7fdf905a-8b91-496f-a380-1e594bff40de)
 
 
-5. 입금
+**5. 입금**
 - deposit button click
 - 생성한 계좌 번호 입력
 - 입금할 금액 입력
@@ -133,7 +133,7 @@ Account 클래스는 은행 계좌를 나타냅니다. 돈을 입금하고 출�
 
 
 
-6. 출금
+**6. 출금**
 - withdraw button click
 - 생성한 계좌 번호 입력
 - 출금할 금액 입력
@@ -145,21 +145,30 @@ Account 클래스는 은행 계좌를 나타냅니다. 돈을 입금하고 출�
 
 
 
-7. 모든 계좌 확인 
+**7. 모든 계좌 확인** 
 - all accounts button click
 - 로그인 한 이름으로 생성된 계좌 정보 출력
 *계좌 정보에는 계좌 번호, 이름, 금액이 포함
 ![image](https://github.com/user-attachments/assets/66404d52-c49f-42cc-9eb8-ae60deed40a1)
 
 
-8. 계좌 상세 거래 내역 확인
+**8. 계좌 상세 거래 내역 확인**  
+※ 메모장에서 데이터를 가져오는 것이 아닌, 현재 프로그램 내에서 관리되고 있는 계좌 정보와 거래 내역을 반영하여 보여준다.
+   구체적으로, bankingSystem 객체는 메모리에 저장된 계좌와 거래 내역을 관리하며 사용자가 on_button_show_clicked()
+   함수를 호출하면, 해당 계좌의 거래 내역을 메모리에서 가져와 화면에 표시해준다.
+
+   이 때 거래 내역은 account->getTransactions()를 통해 메모리 상에서 직접 불러오고, 메모장 파일과는 관련이 없기 때문에 프로그램 시작시에는 호출이 되지 않음.
+   따라서, 이 로직은 프로그램이 실행되는 동안 사용자가 계좌에 대해 수행한 입출금 거래 등 현재 상태를 반영하여 보여주는 것이다.
+
+   즉, 이전에 저장된 파일이나 외부 데이터 소스에 의존하지 않고, [프로그램 내에서의 상태를 실시간으로 반영해 보여주는 기능]
 - transaction history button click
 - 생성한 계좌 번호 입력
 - show button click &rarr; 해당 계좌번호로 입금, 출금 내역 이루어진 순서대로 모두 출력
 - cancle button click &rarr; 출력 없이 취소
+
 ![image](https://github.com/user-attachments/assets/1f100f7b-3014-4571-9fa5-f1f6004a69f4)
 
-9. 종료
+**9. 종료**
 - exit button click
 
   

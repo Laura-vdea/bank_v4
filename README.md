@@ -103,7 +103,7 @@ Account 클래스는 은행 계좌를 나타냅니다. 돈을 입금하고 출�
 #### [ 프로젝트 단계별 과정 설명 ]  
 **1. 회원가입**
 - sign up button click &rarr; 생성할 이름 입력
-   
+    
 **2. 로그인 & 로그아웃**
 - 이름 입력 &rarr; login button click
 - log out button click 

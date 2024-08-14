@@ -1,53 +1,61 @@
 #include "account.h"
 
-// Account 클래스 생성자의 파라미터 타입을 QString으로 수정
+// Account 클래스 생성자
+// 계좌번호, 고객명, 잔액을 초기화하는 생성자
 Account::Account(const QString& accNum, const QString& nm, int bal)
     : accountNumber(accNum), name(nm), balance(bal) {}
 
+// 계좌번호를 반환하는 함수
 QString Account::getAccountNumber() const {
-    return accountNumber;  // 리턴 타입을 QString으로 수정
+    return accountNumber;  // 계좌번호를 QString 타입으로 반환
 }
 
+// 계좌를 계좌번호와 함께 accountMap에 추가하는 함수
 void Account::addAccount(const QString& accountNumber, unique_ptr<Account> account) {
-    accountMap[accountNumber] = std::move(account);
+    accountMap[accountNumber] = std::move(account);  // unique_ptr로 관리되는 계좌 객체를 이동하여 저장
 }
 
+// 잔액을 반환하는 함수
 int Account::getBalance() const {
-    return balance;
+    return balance;  // 현재 계좌 잔액을 반환
 }
 
+// 계좌번호를 이용해 accountMap에서 계좌를 찾는 함수
 Account* Account::getAccount(const QString& accountNumber) const {
-    auto it = accountMap.find(accountNumber);
-    return (it != accountMap.end()) ? it->second.get() : nullptr;
+    auto it = accountMap.find(accountNumber);  // 계좌번호로 검색
+    return (it != accountMap.end()) ? it->second.get() : nullptr;  // 계좌가 존재하면 반환, 없으면 nullptr 반환
 }
 
+// 모든 계좌 정보를 출력하는 함수
 void Account::showAllAccounts() const {
-    for (const auto& pair : accountMap) {
-        pair.second->showAccInfo();
+    for (const auto& pair : accountMap) {  // 모든 계좌에 대해
+        pair.second->showAccInfo();  // 계좌 정보를 출력
     }
 }
 
+// 입금 처리 함수
 bool Account::deposit(double money) {
-    if (money <= 0) return false; // 입금 금액이 0 이하이면 실패
-    balance += money; // 잔액에 입금 금액 추가
-    transactions.push_back({"Deposit", money});
-    return true;
+    if (money <= 0) return false;  // 입금 금액이 0 이하일 경우 실패
+    balance += money;  // 잔액에 입금 금액을 더함
+    transactions.push_back({"Deposit", money});  // 거래 내역에 입금 기록 추가
+    return true;  // 입금 성공
 }
 
-
+// 출금 처리 함수
 bool Account::withdraw(double money) {
-    if (money > balance || money <= 0) return false; // 출금 금액이 잔액보다 많거나 0 이하이면 실패
-    balance -= money; // 잔액에서 출금 금액 차감
-    transactions.push_back({"Withdraw", money});
-    return true;
+    if (money > balance || money <= 0) return false;  // 출금 금액이 잔액보다 많거나 0 이하일 경우 실패
+    balance -= money;  // 잔액에서 출금 금액을 차감
+    transactions.push_back({"Withdraw", money});  // 거래 내역에 출금 기록 추가
+    return true;  // 출금 성공
 }
 
+// 계좌명의를 반환하는 함수
 QString Account::getName() const {
-    return name;
+    return name;  // 계좌명의 반환
 }
 
-void Account::showAccInfo() const { // 계좌 정보를 출력하는 함수
-    //qDebug().nospace() << "계좌번호:" << accountNumber << ", 고객명:" << name << ", 잔액:" << balance;
+// 계좌 정보를 출력하는 함수
+void Account::showAccInfo() const {
     // 메모장 파일(accountData.txt)에서 데이터를 불러오는 로직
     QFile file("accountData.txt");
 
@@ -80,31 +88,35 @@ void Account::showAccInfo() const { // 계좌 정보를 출력하는 함수
     }
 
     file.close();
+    // 계좌 정보를 메시지 박스로 표시
     QMessageBox::information(nullptr, "Account Show", msg + content);
 }
 
-void Account::save(QTextStream& outFile) const { // 계좌 정보를 파일에 저장하는 함수
-    // outFile << accountNumber << ' ' << name << ' ' << balance << '\n';
+// 계좌 정보를 파일에 저장하는 함수
+void Account::save(QTextStream& outFile) const {
+    // 모든 계좌 정보를 파일에 저장
     for (const auto& pair : accountMap) {
-        pair.second->save(outFile);
+        pair.second->save(outFile);  // 각 계좌 정보를 저장
     }
 }
 
-void Account::load(QTextStream& inFile) { // 파일에서 계좌 정보를 읽어오는 함수
-    // inFile >> accountNumber >> name >> balance;
-    accountMap.clear();
-    while (!inFile.atEnd()) {  // 스트림의 끝을 확인하는 방법 수정
+// 파일에서 계좌 정보를 읽어오는 함수
+void Account::load(QTextStream& inFile) {
+    accountMap.clear();  // 기존 계좌 정보를 초기화
+    while (!inFile.atEnd()) {  // 스트림의 끝을 확인하며 읽기
         QChar accountType;
         inFile >> accountType;
 
         if (accountType == 'N') {  // 'N'이 보통 예금 계좌임을 나타냄
             QString accountNumber, name;
             int balance;
-            inFile >> accountNumber >> name >> balance;
-            accountMap[accountNumber] = std::make_unique<Account>(accountNumber, name, balance);
+            inFile >> accountNumber >> name >> balance;  // 계좌 정보 읽기
+            accountMap[accountNumber] = std::make_unique<Account>(accountNumber, name, balance);  // 계좌 추가
         }
     }
 }
+
+// 거래 내역을 반환하는 함수
 vector<pair<QString, double>> Account::getTransactions() const {
-    return transactions;  // 거래 내역 반환
+    return transactions;  // 거래 내역 리스트를 반환
 }

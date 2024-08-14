@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>619</width>
-    <height>332</height>
+    <height>330</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>160</y>
+     <y>110</y>
      <width>41</width>
      <height>16</height>
     </rect>
@@ -64,7 +64,7 @@
 background-color: rgb(147, 170, 157);</string>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>4</number>
    </property>
    <widget class="QWidget" name="page_6"/>
    <widget class="QWidget" name="page_4">
@@ -848,7 +848,7 @@ History</string>
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>150</y>
+     <y>100</y>
      <width>171</width>
      <height>31</height>
     </rect>
@@ -858,7 +858,7 @@ History</string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>270</y>
+     <y>160</y>
      <width>211</width>
      <height>31</height>
     </rect>
@@ -874,6 +874,85 @@ background-color: rgb(181, 181, 181);</string>
    </property>
    <property name="text">
     <string>Login</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SignUpButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>230</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-color: rgb(181, 181, 181);</string>
+   </property>
+   <property name="text">
+    <string>Sign Up</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ImportButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>270</y>
+     <width>211</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-color: rgb(181, 181, 181);</string>
+   </property>
+   <property name="text">
+    <string>Import Account Data</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="LogoutButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>200</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-color: rgb(181, 181, 181);</string>
+   </property>
+   <property name="text">
+    <string>Log Out</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_username">
+   <property name="geometry">
+    <rect>
+     <x>63</x>
+     <y>109</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

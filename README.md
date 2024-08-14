@@ -83,7 +83,7 @@ Account 클래스는 은행 계좌를 나타냅니다. 돈을 입금하고 출�
     - getTransactions() const                                                 : 계좌의 거래 내역을 반환합니다.  
   
 #### [ 빌드 및 실행 방법 ]  
-> $ git clone https://github.com/khy0e/banking-system.git  
+> $ git clone https://github.com/khy0e/Veda_bank_project.git
   
 #### [ 프로젝트 디렉토리로 이동 ]  
 > $ cd banking-system  

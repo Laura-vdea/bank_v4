@@ -245,7 +245,7 @@ bool BankingSystem::updateAccountBalance(const QString &accountNumber, int amoun
         if (!account->withdraw(amount)) {
             // 출금 실패 시 경고 메시지 표시하고 실패 로그 기록
             QMessageBox::warning(nullptr, "Withdrawal Error", "잔액이 부족합니다.");
-            logTransaction(accountNumber, amount, isDeposit, true); // 성공 로그 기록
+            logErrTransaction(accountNumber, amount, isDeposit, false); // 실패 로그 기록
             return false;
         }
     }
